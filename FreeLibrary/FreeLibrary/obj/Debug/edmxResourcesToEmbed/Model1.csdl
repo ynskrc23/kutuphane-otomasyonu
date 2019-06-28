@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KütüphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ayarlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanıcı_Adı" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kitap_Ekleme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kitabın_Adı" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="Kitabın_Yazarı" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="Yayın_Evi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Kitabın_Türü" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Basım_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Sayfa_Sayısı" Type="Int16" />
+    <Property Name="Raf_Sırası" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ödünç_Kitap_Verme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Üye_Adı" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Kitabın_Adı" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Veriliş_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Kitabı_Veren" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Geri_Geldimi" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Geliş_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Teslim_Alan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Üye_Ekleme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tc" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="İsim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Soyisim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Dogum_Yeri" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Dogum_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Cep_No" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="E_posta" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Eğitim" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Üyelik_Tarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="KütüphaneEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ayarlars" EntityType="Self.Ayarlar" />
+    <EntitySet Name="Kitap_Eklemes" EntityType="Self.Kitap_Ekleme" />
+    <EntitySet Name="Ödünç_Kitap_Verme" EntityType="Self.Ödünç_Kitap_Verme" />
+    <EntitySet Name="Üye_Ekleme" EntityType="Self.Üye_Ekleme" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KütüphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ayarlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanıcı Adı" Type="nvarchar" MaxLength="20" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Kitap Ekleme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kitabın Adı" Type="nvarchar" MaxLength="35" />
+    <Property Name="Kitabın Yazarı" Type="nvarchar" MaxLength="35" />
+    <Property Name="Yayın Evi" Type="nvarchar" MaxLength="30" />
+    <Property Name="Kitabın Türü" Type="nvarchar" MaxLength="30" />
+    <Property Name="Basım Tarihi" Type="date" />
+    <Property Name="Sayfa Sayısı" Type="smallint" />
+    <Property Name="Raf Sırası" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Ödünç Kitap Verme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Üye Adı" Type="nvarchar" MaxLength="30" />
+    <Property Name="Kitabın Adı" Type="nvarchar" MaxLength="30" />
+    <Property Name="Veriliş Tarihi" Type="date" />
+    <Property Name="Kitabı Veren" Type="nvarchar" MaxLength="30" />
+    <Property Name="Geri Geldimi" Type="nvarchar" MaxLength="8" />
+    <Property Name="Geliş Tarihi" Type="date" />
+    <Property Name="Teslim Alan" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Üye Ekleme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tc" Type="char" MaxLength="11" />
+    <Property Name="İsim" Type="nvarchar" MaxLength="30" />
+    <Property Name="Soyisim" Type="nvarchar" MaxLength="30" />
+    <Property Name="Cinsiyet" Type="char" MaxLength="6" />
+    <Property Name="Dogum Yeri" Type="nvarchar" MaxLength="25" />
+    <Property Name="Dogum Tarihi" Type="date" />
+    <Property Name="Cep No" Type="char" MaxLength="11" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="E-posta" Type="nvarchar" MaxLength="25" />
+    <Property Name="Eğitim" Type="nvarchar" MaxLength="20" />
+    <Property Name="Üyelik Tarihi" Type="date" />
+  </EntityType>
+  <EntityContainer Name="KütüphaneModelStoreContainer">
+    <EntitySet Name="Ayarlar" EntityType="Self.Ayarlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kitap Ekleme" EntityType="Self.Kitap Ekleme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ödünç Kitap Verme" EntityType="Self.Ödünç Kitap Verme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Üye Ekleme" EntityType="Self.Üye Ekleme" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

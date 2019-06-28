@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KütüphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ayarlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullanıcı Adı" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Kitap Ekleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kitabın Adı" Type="nvarchar" MaxLength="35" />
+          <Property Name="Kitabın Yazarı" Type="nvarchar" MaxLength="35" />
+          <Property Name="Yayın Evi" Type="nvarchar" MaxLength="30" />
+          <Property Name="Kitabın Türü" Type="nvarchar" MaxLength="30" />
+          <Property Name="Basım Tarihi" Type="date" />
+          <Property Name="Sayfa Sayısı" Type="smallint" />
+          <Property Name="Raf Sırası" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Ödünç Kitap Verme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Üye Adı" Type="nvarchar" MaxLength="30" />
+          <Property Name="Kitabın Adı" Type="nvarchar" MaxLength="30" />
+          <Property Name="Veriliş Tarihi" Type="date" />
+          <Property Name="Kitabı Veren" Type="nvarchar" MaxLength="30" />
+          <Property Name="Geri Geldimi" Type="nvarchar" MaxLength="8" />
+          <Property Name="Geliş Tarihi" Type="date" />
+          <Property Name="Teslim Alan" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Üye Ekleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tc" Type="char" MaxLength="11" />
+          <Property Name="İsim" Type="nvarchar" MaxLength="30" />
+          <Property Name="Soyisim" Type="nvarchar" MaxLength="30" />
+          <Property Name="Cinsiyet" Type="char" MaxLength="6" />
+          <Property Name="Dogum Yeri" Type="nvarchar" MaxLength="25" />
+          <Property Name="Dogum Tarihi" Type="date" />
+          <Property Name="Cep No" Type="char" MaxLength="11" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+          <Property Name="E-posta" Type="nvarchar" MaxLength="25" />
+          <Property Name="Eğitim" Type="nvarchar" MaxLength="20" />
+          <Property Name="Üyelik Tarihi" Type="date" />
+        </EntityType>
+        <EntityContainer Name="KütüphaneModelStoreContainer">
+          <EntitySet Name="Ayarlar" EntityType="Self.Ayarlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kitap Ekleme" EntityType="Self.Kitap Ekleme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ödünç Kitap Verme" EntityType="Self.Ödünç Kitap Verme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Üye Ekleme" EntityType="Self.Üye Ekleme" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KütüphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ayarlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullanıcı_Adı" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kitap_Ekleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kitabın_Adı" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="Kitabın_Yazarı" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="Yayın_Evi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kitabın_Türü" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Basım_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Sayfa_Sayısı" Type="Int16" />
+          <Property Name="Raf_Sırası" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ödünç_Kitap_Verme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Üye_Adı" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kitabın_Adı" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Veriliş_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Kitabı_Veren" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Geri_Geldimi" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Geliş_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Teslim_Alan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Üye_Ekleme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tc" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="İsim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Soyisim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Cinsiyet" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Dogum_Yeri" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Dogum_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Cep_No" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="E_posta" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Eğitim" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Üyelik_Tarihi" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="KütüphaneEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ayarlars" EntityType="Self.Ayarlar" />
+          <EntitySet Name="Kitap_Eklemes" EntityType="Self.Kitap_Ekleme" />
+          <EntitySet Name="Ödünç_Kitap_Verme" EntityType="Self.Ödünç_Kitap_Verme" />
+          <EntitySet Name="Üye_Ekleme" EntityType="Self.Üye_Ekleme" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KütüphaneModelStoreContainer" CdmEntityContainer="KütüphaneEntities3">
+          <EntitySetMapping Name="Ayarlars">
+            <EntityTypeMapping TypeName="KütüphaneModel.Ayarlar">
+              <MappingFragment StoreEntitySet="Ayarlar">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kullanıcı_Adı" ColumnName="Kullanıcı Adı" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kitap_Eklemes">
+            <EntityTypeMapping TypeName="KütüphaneModel.Kitap_Ekleme">
+              <MappingFragment StoreEntitySet="Kitap Ekleme">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kitabın_Adı" ColumnName="Kitabın Adı" />
+                <ScalarProperty Name="Kitabın_Yazarı" ColumnName="Kitabın Yazarı" />
+                <ScalarProperty Name="Yayın_Evi" ColumnName="Yayın Evi" />
+                <ScalarProperty Name="Kitabın_Türü" ColumnName="Kitabın Türü" />
+                <ScalarProperty Name="Basım_Tarihi" ColumnName="Basım Tarihi" />
+                <ScalarProperty Name="Sayfa_Sayısı" ColumnName="Sayfa Sayısı" />
+                <ScalarProperty Name="Raf_Sırası" ColumnName="Raf Sırası" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ödünç_Kitap_Verme">
+            <EntityTypeMapping TypeName="KütüphaneModel.Ödünç_Kitap_Verme">
+              <MappingFragment StoreEntitySet="Ödünç Kitap Verme">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Üye_Adı" ColumnName="Üye Adı" />
+                <ScalarProperty Name="Kitabın_Adı" ColumnName="Kitabın Adı" />
+                <ScalarProperty Name="Veriliş_Tarihi" ColumnName="Veriliş Tarihi" />
+                <ScalarProperty Name="Kitabı_Veren" ColumnName="Kitabı Veren" />
+                <ScalarProperty Name="Geri_Geldimi" ColumnName="Geri Geldimi" />
+                <ScalarProperty Name="Geliş_Tarihi" ColumnName="Geliş Tarihi" />
+                <ScalarProperty Name="Teslim_Alan" ColumnName="Teslim Alan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Üye_Ekleme">
+            <EntityTypeMapping TypeName="KütüphaneModel.Üye_Ekleme">
+              <MappingFragment StoreEntitySet="Üye Ekleme">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="İsim" ColumnName="İsim" />
+                <ScalarProperty Name="Soyisim" ColumnName="Soyisim" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="Dogum_Yeri" ColumnName="Dogum Yeri" />
+                <ScalarProperty Name="Dogum_Tarihi" ColumnName="Dogum Tarihi" />
+                <ScalarProperty Name="Cep_No" ColumnName="Cep No" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="E_posta" ColumnName="E-posta" />
+                <ScalarProperty Name="Eğitim" ColumnName="Eğitim" />
+                <ScalarProperty Name="Üyelik_Tarihi" ColumnName="Üyelik Tarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

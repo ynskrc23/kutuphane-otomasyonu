@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KütüphaneModelStoreContainer" CdmEntityContainer="KütüphaneEntities3">
+    <EntitySetMapping Name="Ayarlars">
+      <EntityTypeMapping TypeName="KütüphaneModel.Ayarlar">
+        <MappingFragment StoreEntitySet="Ayarlar">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kullanıcı_Adı" ColumnName="Kullanıcı Adı" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitap_Eklemes">
+      <EntityTypeMapping TypeName="KütüphaneModel.Kitap_Ekleme">
+        <MappingFragment StoreEntitySet="Kitap Ekleme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kitabın_Adı" ColumnName="Kitabın Adı" />
+          <ScalarProperty Name="Kitabın_Yazarı" ColumnName="Kitabın Yazarı" />
+          <ScalarProperty Name="Yayın_Evi" ColumnName="Yayın Evi" />
+          <ScalarProperty Name="Kitabın_Türü" ColumnName="Kitabın Türü" />
+          <ScalarProperty Name="Basım_Tarihi" ColumnName="Basım Tarihi" />
+          <ScalarProperty Name="Sayfa_Sayısı" ColumnName="Sayfa Sayısı" />
+          <ScalarProperty Name="Raf_Sırası" ColumnName="Raf Sırası" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ödünç_Kitap_Verme">
+      <EntityTypeMapping TypeName="KütüphaneModel.Ödünç_Kitap_Verme">
+        <MappingFragment StoreEntitySet="Ödünç Kitap Verme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Üye_Adı" ColumnName="Üye Adı" />
+          <ScalarProperty Name="Kitabın_Adı" ColumnName="Kitabın Adı" />
+          <ScalarProperty Name="Veriliş_Tarihi" ColumnName="Veriliş Tarihi" />
+          <ScalarProperty Name="Kitabı_Veren" ColumnName="Kitabı Veren" />
+          <ScalarProperty Name="Geri_Geldimi" ColumnName="Geri Geldimi" />
+          <ScalarProperty Name="Geliş_Tarihi" ColumnName="Geliş Tarihi" />
+          <ScalarProperty Name="Teslim_Alan" ColumnName="Teslim Alan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Üye_Ekleme">
+      <EntityTypeMapping TypeName="KütüphaneModel.Üye_Ekleme">
+        <MappingFragment StoreEntitySet="Üye Ekleme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tc" ColumnName="Tc" />
+          <ScalarProperty Name="İsim" ColumnName="İsim" />
+          <ScalarProperty Name="Soyisim" ColumnName="Soyisim" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="Dogum_Yeri" ColumnName="Dogum Yeri" />
+          <ScalarProperty Name="Dogum_Tarihi" ColumnName="Dogum Tarihi" />
+          <ScalarProperty Name="Cep_No" ColumnName="Cep No" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="E_posta" ColumnName="E-posta" />
+          <ScalarProperty Name="Eğitim" ColumnName="Eğitim" />
+          <ScalarProperty Name="Üyelik_Tarihi" ColumnName="Üyelik Tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
